@@ -1,7 +1,9 @@
+require('dotenv').config()
 const express = require("express");
 const bodyParser = require("body-parser");
 const CORS = require("cors");
 const db = require("./dbConnection");
+
 
 
 const app = express();
@@ -20,8 +22,8 @@ app.get('/api/get', (req, res)=>{
 
     })
 
-})
-
+}) 
+ 
 app.post('/api/insert',(req,res)=>{
 
     const {name, email, contact} = req.body;
@@ -33,7 +35,7 @@ app.post('/api/insert',(req,res)=>{
             console.log("Error : " + error );
         }
         else{
-            console.log(result);
+            // console.log(result);
         }
 
     })
@@ -51,7 +53,7 @@ app.post('/api/update',(req,res)=>{
             console.log("Error : " + error );
         }
         else{
-            console.log(result);
+            // console.log(result);
         }
 
     })
